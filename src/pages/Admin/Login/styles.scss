@@ -1,0 +1,61 @@
+.admin-login {
+    &-name{
+    text-align: center;
+    font-weight: 600;
+    color: #434343;
+    }
+    &-label {
+        font-size: 16px;
+        color: #B3B3B3;
+        padding-bottom: 8px;
+        align-items: center;
+    }
+    &-img {
+
+    }
+
+    &-button {
+        border-radius: 8px !important;
+    }
+    &-title {
+        font-family: 'JetBrains Mono';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 48px;
+        color: #FA8C16;
+        display: flex;
+        align-items: center;
+        display: block;
+    }
+    &-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        padding-bottom: 43px;
+    }
+    &-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f0f0f0;
+        width: 100%;
+        height: 100vh;
+    }
+    &-form {
+    width: 408px;
+    // height: 384px;
+    // border: #FA8C16 1px solid;
+    border-radius: 8px;
+    padding: 24px;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+}
+
+.ant-form-item-control-input-content {
+    display: flex;
+    justify-content: space-between;
+}
