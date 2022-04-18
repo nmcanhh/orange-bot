@@ -11,7 +11,7 @@
         align-items: center;
     }
     &-img {
-
+        
     }
 
     &-button {
@@ -24,9 +24,6 @@
         font-size: 36px;
         line-height: 48px;
         color: #FA8C16;
-        display: flex;
-        align-items: center;
-        display: block;
     }
     &-logo {
         display: flex;
@@ -34,6 +31,7 @@
         align-items: center;
         flex-direction: row;
         padding-bottom: 43px;
+        gap: 8px;
     }
     &-container{
         display: flex;

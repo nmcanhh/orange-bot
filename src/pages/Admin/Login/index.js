@@ -13,7 +13,7 @@ function Login(props) {
         <div className='admin-login-container'>
             <div className='admin-login-logo'>
                 <img src={AdminAssets.ORANGE_LOGO} alt="" className='admin-login-img' />
-                <h1 className='admin-login-title'>OrangeBot</h1>
+                <span className='admin-login-title'>OrangeBot</span>
             </div>
             <div className='admin-login-form'>
                 <h1 className='admin-login-name'>Đăng nhập</h1>
