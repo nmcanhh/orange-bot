@@ -1,6 +1,6 @@
 import "./styles.scss";
 import AdminLayout from "../../Admin";
-import { AdminAssets } from "../../../constants/assets";
+import { AdminSidebarAssets } from "../../../constants/assets";
 import { EditOutlined } from '@ant-design/icons';
 import { Button, Input, Tooltip, } from 'antd';
 import { Row, Col } from 'antd';
@@ -20,7 +20,7 @@ function UpdateUser(props) {
         <AdminLayout>
             <div className="wrapper">
                 <div className="section section--left">
-                    <img src={AdminAssets.DEFAULT_AVATAR} alt="" className="section--left__avatar" />
+                    <img src={AdminSidebarAssets.DEFAULT_AVATAR} alt="" className="section--left__avatar" />
                     <span className="section--left__text section--left__name">
                         <Input
                             defaultValue="Lalisa Manoban"

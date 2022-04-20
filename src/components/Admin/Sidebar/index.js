@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./styles.scss"
 import { AdminSidebar } from '../../../constants/AdminSidebar.js';
-import { AdminAssets } from "../../../constants/assets.js"
+import { AdminSidebarAssets } from "../../../constants/assets.js"
 
 function Sidebar(props) {
     return (
         <div className='sidebar'>
             <div className="sidebar__header">
-                <img src={AdminAssets.ORANGE_LOGO} alt="" className='sidebar__header-image' />
+                <img src={AdminSidebarAssets.ORANGE_LOGO} alt="" className='sidebar__header-image' />
                 <span className='sidebar__header-title'>OrangeBot</span>
             </div>
             <div className="sidebar__body">

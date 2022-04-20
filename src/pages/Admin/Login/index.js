@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminAssets } from "../../../constants/assets.js"
+import { AdminSidebarAssets } from "../../../constants/assets.js"
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
@@ -12,7 +12,7 @@ function Login(props) {
     return (
         <div className='admin-login-container'>
             <div className='admin-login-logo'>
-                <img src={AdminAssets.ORANGE_LOGO} alt="" className='admin-login-img' />
+                <img src={AdminSidebarAssets.ORANGE_LOGO} alt="" className='admin-login-img' />
                 <span className='admin-login-title'>OrangeBot</span>
             </div>
             <div className='admin-login-form'>
