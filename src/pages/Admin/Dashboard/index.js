@@ -4,15 +4,13 @@ import AdminLayout from "../../Admin";
 import { Row, Col } from 'antd';
 import { AdminDashboardAssets } from "../../../constants/assets.js"
 import {
-    Dropdown,
-    Menu, Modal, Table,
-    Tabs,
-    Tag, Typography
+    Table
 } from "antd";
 import "antd/dist/antd.css";
 import { uploadData } from "../../../constants/upload-data.js"
 import { DeleteOutlined } from "@ant-design/icons"
-
+import moment from "moment";
+import dateFormat from "dateformat";
 
 
 function Dashboard(props) {
@@ -23,15 +21,15 @@ function Dashboard(props) {
     const fileIcon = (fileType) => {
         switch (fileType) {
             case "text":
-                return (<div><img src={AdminDashboardAssets.DASHBOARD_FILE} alt="" className="page-table__file-icon" /></div>);
+                return (<div><img src={AdminDashboardAssets.DASHBOARD_FILE} alt="" className="dashboard-table__file-icon" /></div>);
             case "image":
-                return (<div><img src={AdminDashboardAssets.DASHBOARD_IMAGE} alt="" className="page-table__file-icon" /></div>);
+                return (<div><img src={AdminDashboardAssets.DASHBOARD_IMAGE} alt="" className="dashboard-table__file-icon" /></div>);
             case "video":
-                return (<div><img src={AdminDashboardAssets.DASHBOARD_VIDEO} alt="" className="page-table__file-icon" /></div>);
+                return (<div><img src={AdminDashboardAssets.DASHBOARD_VIDEO} alt="" className="dashboard-table__file-icon" /></div>);
             case "package":
-                return (<div><img src={AdminDashboardAssets.DASHBOARD_PACKAGE} alt="" className="page-table__file-icon" /></div>);
+                return (<div><img src={AdminDashboardAssets.DASHBOARD_PACKAGE} alt="" className="dashboard-table__file-icon" /></div>);
             default:
-                return (<div><img src={AdminDashboardAssets.DASHBOARD_FILE} alt="" className="page-table__file-icon" /></div>);
+                return (<div><img src={AdminDashboardAssets.DASHBOARD_FILE} alt="" className="dashboard-table__file-icon" /></div>);
         }
     }
 
@@ -70,9 +68,9 @@ function Dashboard(props) {
             dataIndex: "createdAt",
             width: "24rem",
             align: "left",
-            render: (createdAt) => (
+            render: (createdAt, record) => (
                 <div>
-                    <span>{createdAt}</span>
+                    <span>{moment(createdAt).fromNow()}</span>
                 </div>
             ),
         },
@@ -90,11 +88,14 @@ function Dashboard(props) {
         {
             title: "更新日",
             dataIndex: "updatedAt",
-            width: "24rem",
+            width: "22rem",
             align: "left",
             render: (updatedAt) => (
                 <div className="text-center">
-                    <span>{updatedAt}</span>
+                    <span>{dateFormat(
+                        new Date(updatedAt),
+                        "yyyy/mm/dd"
+                    )}</span>
                 </div>
             ),
         },
@@ -104,7 +105,7 @@ function Dashboard(props) {
             align: "center",
             render: (record) => {
                 return (
-                    <div><p>Xóa</p></div>
+                    <div><p>消去</p></div>
                 );
             },
         },
@@ -112,9 +113,9 @@ function Dashboard(props) {
 
     return (
         <AdminLayout>
-            <div className="page-wrapper">
-                <div className="page-body">
-                    <div className="page-row">
+            <div className="dashboard-wrapper">
+                <div className="dashboard-body">
+                    <div className="dashboard-row">
                         <div className="dashboard__card dashboard__card-1x">
                             <div className="dashboard__card__image circle-blue">
                                 <img src={AdminDashboardAssets.DASHBOARD_FILE} alt="" />
@@ -165,7 +166,7 @@ function Dashboard(props) {
                         </div>
                     </div>
 
-                    <div className="page-table">
+                    <div className="dashboard-table">
                         <Table
                             columns={columns}
                             dataSource={dataSource}

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import "./styles.scss"
 import { AdminSidebar } from '../../../constants/AdminSidebar.js';
 import { AdminSidebarAssets } from "../../../constants/assets.js"
+import { NavLink } from "react-router-dom";
 
 function Sidebar(props) {
     return (
@@ -15,12 +16,16 @@ function Sidebar(props) {
                 <ul className='sidebar__list-group'>
                     {AdminSidebar.map(item => {
                         return <li>
-                            <a href="" className='sidebar__list-group-item'>
+                            <NavLink
+                                className="sidebar__list-group-item"
+                                to={item.to}
+                                activeClassName="sidebar__active"
+                            >
                                 <span className='sidebar__list-group-icon'>
                                     <img src={item.smallIcon} alt="" />
                                 </span>
                                 <span className='sidebar__list-group-title'>{item.title}</span>
-                            </a>
+                            </NavLink>
                         </li>
                     })}
                 </ul>

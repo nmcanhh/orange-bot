@@ -2,13 +2,13 @@ import { AdminSidebarAssets } from "./assets.js"
 
 export const AdminSidebar = [
     {
-        title: 'Profile',
+        title: 'プロファイル',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_PROFILE,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_PROFILE,
         to: '/profile',
     },
     {
-        title: 'Dashboard',
+        title: '添付',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_DASHBOARD,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_DASHBOARD,
         to: '/dashboard',

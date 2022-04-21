@@ -7,6 +7,7 @@ import Header from "./components/Admin/Header/index.js";
 import UpdateUser from "./pages/Admin/User/UpdateUser.js";
 import Dashboard from "./pages/Admin/Dashboard/index.js";
 import Ads from "./pages/Admin/Ads/index.js";
+import Script from "./pages/Admin/Script/index.js";
 // import { AdminRoute } from "./routes";
 
 
@@ -16,10 +17,11 @@ function App() {
       <Routes>
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/home" element={<Login />} />
-        <Route exact path="/user" element={<User />} />
-        <Route exact path="/user/update" element={<UpdateUser />} />
+        <Route exact path="/profile" element={<User />} />
+        <Route exact path="/profile/update" element={<UpdateUser />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/ads" element={<Ads />} />
+        <Route exact path="/script" element={<Script />} />
       </Routes>
     </BrowserRouter>
   );

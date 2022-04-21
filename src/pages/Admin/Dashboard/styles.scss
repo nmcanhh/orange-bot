@@ -1,4 +1,4 @@
-.page{
+.dashboard{
     &-wrapper{
         padding: 2.8rem;
     }
@@ -118,7 +118,7 @@
             position: relative;
             display: block;
             overflow: hidden;
-            height: 30px;
+            height: 36px;
             background-color: #D9D9D9;
             border-radius: 8px;
         }
@@ -162,19 +162,19 @@
 }
 
 .circle-blue {
-    background-color: #5B93FF;
+    background-color: #5b93ff21;
     // opacity: 0.1;
 }
 .circle-yellow {
-    background-color: #FFD66B;
+    background-color: #ffd66b4f;
     // opacity: 0.1;
 }
 .circle-red {
-    background-color: #FF8F6B;
+    background-color: #ff8f6b2b;
     // opacity: 0.1;
 }
 
 .circle-violet {
-    background-color: #605BFF;
+    background-color: #605bff38;
     // opacity: 0.1;
 }

@@ -22,6 +22,13 @@ import DashboardStorage from "../assets/Admin/Dashboard/dashboard-storage.png"
 
 import AdsSearching from "../assets/Admin/Ads/ads-search.png"
 
+import ScriptModalPlus from "../assets/Admin/Script/script-modal-plus.png"
+import ScriptModalUpload from "../assets/Admin/Script/script-modal-upload.png"
+import ScriptTableImageNull from "../assets/Admin/Script/script-table-image-null.png"
+import ScriptTableImage1 from "../assets/Admin/Script/script-table-image-1.png"
+import ScriptTableImage2 from "../assets/Admin/Script/script-table-image-2.png"
+import ScriptTableImage3 from "../assets/Admin/Script/script-table-image-3.png"
+
 export const AdminSidebarAssets = {
     DEFAULT_AVATAR: DefaultAvatar,
     ORANGE_LOGO: OrangeLogo,
@@ -48,5 +55,23 @@ export const AdminDashboardAssets = {
 }
 
 export const AdminAdsAssets = {
+    ADS_SEARCHING: AdsSearching,
+}
+
+export const AdminScriptAssets = {
+    SCRIPT_MODAL_PLUS: ScriptModalPlus,
+    SCRIPT_MODAL_UPLOAD: ScriptModalUpload,
+    SCRIPT_TABLE_IMAGE_NULL: ScriptTableImageNull,
+    SCRIPT_TABLE_IMAGE_1: ScriptTableImage1,
+    SCRIPT_TABLE_IMAGE_2: ScriptTableImage2,
+    SCRIPT_TABLE_IMAGE_3: ScriptTableImage3,
+
+}
+
+export const AdminThemeAssets = {
+    ADS_SEARCHING: AdsSearching,
+}
+
+export const AdminChartAssets = {
     ADS_SEARCHING: AdsSearching,
 }
