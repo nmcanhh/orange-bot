@@ -10,9 +10,7 @@ function Script(props) {
     return (
         <AdminLayout>
             <div className="page-wrapper">
-               
-                    <ScriptDataTable />
-                
+                <ScriptDataEmpty />
             </div>
         </AdminLayout>
     );

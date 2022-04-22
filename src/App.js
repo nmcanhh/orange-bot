@@ -8,6 +8,7 @@ import UpdateUser from "./pages/Admin/User/UpdateUser.js";
 import Dashboard from "./pages/Admin/Dashboard/index.js";
 import Ads from "./pages/Admin/Ads/index.js";
 import Script from "./pages/Admin/Script/index.js";
+import Chart from "./pages/Admin/Chart/index.js";
 // import { AdminRoute } from "./routes";
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/ads" element={<Ads />} />
         <Route exact path="/script" element={<Script />} />
+        <Route exact path="/chart" element={<Chart />} />
       </Routes>
     </BrowserRouter>
   );

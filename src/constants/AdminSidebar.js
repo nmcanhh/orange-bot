@@ -26,7 +26,7 @@ export const AdminSidebar = [
         to: '/ads',
     },
     {
-        title: 'Kịch bản',
+        title: 'シナリオの設定',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_SCRIPT,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_DASHBOARD,
         to: '/script',

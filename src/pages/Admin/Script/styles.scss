@@ -56,8 +56,13 @@
         flex-direction: row;
     &__input-section {
         margin-right: 25px;
+        width: 478px;
     }
     &__input {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    &__selector {
         margin-top: 10px;
         margin-bottom: 15px;
     }
