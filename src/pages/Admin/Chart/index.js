@@ -24,7 +24,7 @@ const dateFormat = "YYYY/MM/DD";
 function Chart(props) {
     return (
         <AdminLayout>
-            <div className="chart-wrapper">
+            <div className="chart-wrapper" id="page">
                 <div className="chart-header">
                     <div className="chart__tab-pane">
                         <button className="chart__tab-pane__button">添付ファイル</button>

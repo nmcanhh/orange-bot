@@ -1,5 +1,5 @@
 import "./styles.scss";
-import AdminLayout from "../../Admin";
+import AdminLayout from "..";
 import { AdminSidebarAssets } from "../../../constants/assets";
 import { EditOutlined } from '@ant-design/icons';
 import { Button, Input, Tooltip, } from 'antd';
@@ -10,7 +10,7 @@ import moment from 'moment';
 
 
 
-function UpdateUser(props) {
+function UpdateProfile(props) {
     function onChange(date, dateString) {
         console.log(date, dateString);
     }
@@ -85,4 +85,4 @@ function UpdateUser(props) {
     );
 }
 
-export default UpdateUser;
+export default UpdateProfile;
