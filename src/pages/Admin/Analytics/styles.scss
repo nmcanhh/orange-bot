@@ -1,0 +1,187 @@
+#analystics-chart {
+    .analystics {
+        &-wrapper{
+            padding: 2.8rem;
+            background-color: #f0f0f0;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-basis: auto;
+        }
+    }
+
+    .tab-pane {
+        display: flex;
+        background-color: #F5F5F5;
+        border-radius: 30px;
+
+        &__btn {
+            color: #8C8C8C;
+            background-color: #F5F5F5;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            &--active {
+                color: white;
+                background-color: #FA8C16;
+            }
+        }
+    }
+
+    .ranger-picker {
+        &__text {
+            margin-right: 10px;
+        }
+    }
+
+    .data-section {
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        grid-gap: 30px;
+        grid-template-areas: 
+        "h1 h1 h2"
+        "h3 h3 h3";
+        margin-top: 30px;
+
+        &__title {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        &--left {
+            grid-area: h1;
+            background-color: white;
+            border-radius: 8px;
+            height: 480px;
+            padding: 20px;
+        }
+
+        &--right{
+            grid-area: h2;
+            background-color: white;
+            border-radius: 8px;
+            height: 480px;
+            padding: 20px;
+        }
+    }
+
+    .card-item {
+        width: 309px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        &__content {
+            background-repeat: no-repeat;
+            // height: 200px;
+            background-size: 309px auto;
+            padding: 24px;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        &__text-group {
+            display: flex;
+            // justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+
+        &__text {
+            color: #ffffffbd;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+            &--brand {
+                color: #ffffffbd;
+            }
+            &--total {
+                color: #fff;
+            }
+        }
+
+        &__text-1 {
+            color: #ffffffbd;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        &__text-2 {
+            color: #FFFFFF;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        &__icon {
+            width: 46px;
+            & > img {
+                width: 100%;
+            }
+        }
+    }
+
+    .card-group {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .brand-name {
+        font-size: 16px;
+        color: #BFBFBF;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .donut-chart {
+        padding-top: 20px;
+    }
+
+    .table {
+        padding: 24px;
+        background-color: white;
+        border-radius: 8px;
+        grid-area: h3;
+    }
+}
+
+
+.ant {
+    &-tabs-nav-list {
+        background-color: #F5F5F5;
+       
+        border-radius: 26px;
+        // border: 1px solid red;
+    }
+    &-tabs-tab {
+        padding: 12px 20px;
+    }
+    &-tabs-tab-active {
+        background-color: #FA8C16;
+        font-weight: 600;
+        width: 100%;
+        border-radius: 26px;
+        display: flex;
+        justify-content: center;
+        & > .ant-tabs-tab-btn > span {
+            color: white !important;
+        }
+    }
+    &-tabs-tab-btn {
+        & > span {
+            color: #8C8C8C;
+        }
+    }
+    &-tabs-tab-btn {
+        
+    }
+}

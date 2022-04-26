@@ -35,6 +35,6 @@ export const AdminSidebar = [
         title: 'Thống kê',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_CHART,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_DASHBOARD,
-        to: '/chart',
+        to: '/analytics',
     },
 ]
