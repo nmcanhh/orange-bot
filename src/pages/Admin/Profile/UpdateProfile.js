@@ -43,10 +43,10 @@ function UpdateProfile(props) {
                         </div>
                     </div>
                     <div className="section section--right">
-                        <span className="section--right__title">Chi tiết</span>
+                        <span className="section--right__title">詳細</span>
                         <div className="form-wrapper">
                             <div className="form-input-wrapper">
-                                <span className="form-input--label">Email</span>
+                                <span className="form-input--label">電子メールアドレス</span>
                                 <Input.Group compact className="form-input__input">
                                     <Input
                                         style={{ width: 'calc(100% - 32px)' }}
@@ -58,7 +58,7 @@ function UpdateProfile(props) {
                                 </Input.Group>
                             </div>
                             <div className="form-input-wrapper">
-                                <span className="form-input--label">Mật khẩu</span>
+                                <span className="form-input--label">パスワード</span>
                                 <Input.Group compact className="form-input__input">
                                     <Input.Password
                                         style={{ width: 'calc(100%)' }}
