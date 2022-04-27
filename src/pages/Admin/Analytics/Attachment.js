@@ -81,7 +81,7 @@ const { RangePicker } = DatePicker;
 const { TabPane } = Tabs;
 const momentFormat = "YYYY/MM/DD";
 
-function Analytics(props) {
+function Attachment(props) {
 
     const [pagination, setPagination] = useState({ page: 1, pageSize: 10 });
     const [alreadySelectedRows, setAlreadySelectedRows] = useState([]);
@@ -103,68 +103,84 @@ function Analytics(props) {
     }
 
     useEffect(() => {
-        const getRow = (listScript) => {
-            return listScript?.map((row) => ({
+        const getRow = (uploadData) => {
+            return uploadData?.map((row) => ({
                 key: row.id,
                 id: row.id,
-                name: row.name,
-                times: row.times,
-                website: row.website,
+                fileName: row.fileName,
+                createdAt: row.createdAt,
+                updatedAt: row.updatedAt,
+                fileSize: row.fileSize,
+                fileType: row.fileType,
             }));
         };
-        setDataSource(getRow(listScript));
-    }, [listScript]);
+        setDataSource(getRow(uploadData));
+    }, [uploadData]);
+
 
     const columns = [
         {
-            title: "項番",
-            dataIndex: "id",
+            title: "ファイル名",
+            dataIndex: "fileName",
             width: "18rem",
             align: "left",
-            render: (id, record) => {
+            render: (fileName, record) => {
                 return (
-                    <div>
-                        <span>{id}</span>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        {fileIcon(record.fileType)}
+                        <span>{fileName}</span>
                     </div>
                 );
             },
         },
         {
-            title: "シナリオ名",
-            dataIndex: "name",
+            title: "作成日",
+            dataIndex: "createdAt",
             width: "24rem",
             align: "left",
-            render: (name, record) => {
-                return (
-                    <div>
-                        <span>{name}</span>
-                    </div>
-                );
-            },
-        },
-        {
-            title: "使用回数",
-            dataIndex: "times",
-            width: "28rem",
-            align: "left",
-            render: (times, record) => (
+            render: (createdAt, record) => (
                 <div>
-                    <span>{times}</span>
+                    <span>{moment(createdAt).fromNow()}</span>
                 </div>
             ),
         },
         {
-            title: "ランディングページ",
-            dataIndex: "website",
+            title: "サイズ",
+            dataIndex: "fileSize",
             width: "24rem",
             align: "left",
-            render: (website) => (
+            render: (fileSize) => (
                 <div className="text-center">
-                    <span>{website}</span>
+                    <span>{fileSize}</span>
                 </div>
             ),
+        },
+        {
+            title: "更新日",
+            dataIndex: "updatedAt",
+            width: "22rem",
+            align: "left",
+            render: (updatedAt) => (
+                <div className="text-center">
+                    <span>{dateFormat(
+                        new Date(updatedAt),
+                        "yyyy/mm/dd"
+                    )}</span>
+                </div>
+            ),
+        },
+        {
+            title: <DeleteOutlined />,
+            dataIndex: "18rem",
+            align: "center",
+            render: (record) => {
+                return (
+                    <div><p>消去</p></div>
+                );
+            },
         },
     ];
+
 
 
     return (
@@ -192,83 +208,8 @@ function Analytics(props) {
                             />
                         </div>
                     </div>
-                    <div id="script-chart">
+                    <div id="analystics-attachment">
                         <div className="data-section">
-                            <div className="data-section--left">
-                                <span className="data-section__title">
-                                    シナリオがよく使われたページ
-                                </span>
-                                <div className="card-group">
-                                    <div className="card-item">
-                                        <div className="card-item__content" style={{ backgroundImage: `url(${AdminAnalysticsAssets.CARD_1})`, }}>
-                                            <div className="card-item__icon">
-                                                <img src={AdminAnalysticsAssets.ICON_1} alt="" />
-                                            </div>
-                                            <div className="card-item__text-group">
-                                                <span className="card-item__text card-item__text--brand">Spectrum</span>
-                                                <span className="card-item__text card-item__text--total">912,873</span>
-                                            </div>
-                                        </div>
-                                        <span className="brand-name">spectrum.com</span>
-                                    </div>
-                                    <div className="card-item">
-                                        <div className="card-item__content" style={{ backgroundImage: `url(${AdminAnalysticsAssets.CARD_2})`, }}>
-                                            <div className="card-item__icon">
-                                                <img src={AdminAnalysticsAssets.ICON_2} alt="" />
-                                            </div>
-                                            <div className="card-item__text-group">
-                                                <span className="card-item__text card-item__text--brand">Unsplash</span>
-                                                <span className="card-item__text card-item__text--total">912,873</span>
-                                            </div>
-                                        </div>
-                                        <span className="brand-name">unsplash.com</span>
-                                    </div>
-                                    <div className="card-item">
-                                        <div className="card-item__content" style={{ backgroundImage: `url(${AdminAnalysticsAssets.CARD_3})`, }}>
-                                            <div className="card-item__icon">
-                                                <img src={AdminAnalysticsAssets.ICON_3} alt="" />
-                                            </div>
-                                            <div className="card-item__text-group">
-                                                <span className="card-item__text card-item__text--brand">Lazada</span>
-                                                <span className="card-item__text card-item__text--total">912,873</span>
-                                            </div>
-                                        </div>
-                                        <span className="brand-name">lazada.com</span>
-                                    </div>
-                                    <div className="card-item">
-                                        <div className="card-item__content" style={{ backgroundImage: `url(${AdminAnalysticsAssets.CARD_4})`, }}>
-                                            <div className="card-item__icon">
-                                                <img src={AdminAnalysticsAssets.ICON_4} alt="" />
-                                            </div>
-                                            <div className="card-item__text-group">
-                                                <span className="card-item__text card-item__text--brand">Baemin</span>
-                                                <span className="card-item__text card-item__text--total">912,873</span>
-                                            </div>
-                                        </div>
-                                        <span className="brand-name">baemin.vn</span>
-                                    </div>
-                                    <div className="card-item">
-                                        <div className="card-item__content" style={{ backgroundImage: `url(${AdminAnalysticsAssets.CARD_5})`, }}>
-                                            <div className="card-item__icon">
-                                                <img src={AdminAnalysticsAssets.ICON_5} alt="" />
-                                            </div>
-                                            <div className="card-item__text-group">
-                                                <span className="card-item__text card-item__text--brand">Tiki</span>
-                                                <span className="card-item__text card-item__text--total">912,873</span>
-                                            </div>
-                                        </div>
-                                        <span className="brand-name">tiki.vn</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="data-section--right">
-                                <span className="data-section__title">
-                                    シナリオ間の使用率
-                                </span>
-                                <div className="donut-chart">
-                                    <Pie {...config} />
-                                </div>
-                            </div>
                             <div className="table">
                                 <Table
                                     columns={columns}
@@ -345,4 +286,4 @@ function Analytics(props) {
     );
 }
 
-export default Analytics;
+export default Attachment;

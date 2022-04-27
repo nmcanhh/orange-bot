@@ -9,6 +9,8 @@ import Dashboard from "./pages/Admin/Dashboard/index.js";
 import Ads from "./pages/Admin/Ads/index.js";
 import Script from "./pages/Admin/Script/index.js";
 import Chart from "./pages/Admin/Analytics/index.js";
+import Attachment from "./pages/Admin/Analytics/Attachment";
+import ChartVisitor from "./pages/Admin/Analytics/ChartVisitor";
 // import { AdminRoute } from "./routes";
 
 
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="/ads" element={<Ads />} />
         <Route exact path="/script" element={<Script />} />
         <Route exact path="/analytics" element={<Chart />} />
+        <Route exact path="/analytics/attachment" element={<Attachment />} />
+        <Route exact path="/analytics/chart-visitor" element={<ChartVisitor />} />
       </Routes>
     </BrowserRouter>
   );
