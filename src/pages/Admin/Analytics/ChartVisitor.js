@@ -1,33 +1,44 @@
+import { CaretDownOutlined } from "@ant-design/icons";
+import { Line } from '@ant-design/plots';
+import { DatePicker, Dropdown, Menu } from "antd";
+import "antd/dist/antd.css";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "..";
-import "./styles.scss";
-import {
-    Modal,
-    Tabs,
-    Input,
-    Select,
-    Table,
-    Button,
-    Popconfirm,
-    Form,
-} from "antd";
-import { DatePicker, Space } from "antd";
-import moment from "moment";
-import "antd/dist/antd.css";
 import { AdminAnalysticsAssets } from "../../../constants/assets";
-import { Line } from '@ant-design/plots';
-import { AdminDashboardAssets } from "../../../constants/assets.js"
-import { uploadData } from "../../../constants/upload-data.js"
-import { DeleteOutlined } from "@ant-design/icons"
-import dateFormat from "dateformat";
-import { listScript } from "../../../constants/list-script.js"
-
+import Header from "./Header";
+import "./styles.scss";
 
 const { RangePicker } = DatePicker;
 
 const momentFormat = "YYYY/MM/DD";
 
+
 function ChartVisitor(props) {
+
+    const onMenuClick = (e) => {
+        console.log('click', e);
+    };
+
+
+    const menu = (
+        <Menu
+            onClick={onMenuClick}
+            items={[
+                {
+                    key: '1',
+                    label: '1st item',
+                },
+                {
+                    key: '2',
+                    label: '2nd item',
+                },
+                {
+                    key: '3',
+                    label: '3rd item',
+                },
+            ]}
+        />
+    );
 
     const [data, setData] = useState([]);
 
@@ -59,41 +70,19 @@ function ChartVisitor(props) {
         <AdminLayout>
             <div id="analystics">
                 <div className="analystics-wrapper">
-                    <div className="analystics-header">
-                        <div className="tab-pane">
-                            <button className="tab-pane__btn">添付ファイル</button>
-                            <button className="tab-pane__btn tab-pane__btn--active">シナリオ</button>
-                            <button className="tab-pane__btn">
-                                アクセス数
-                            </button>
-                            <button className="tab-pane__btn">開始数・離脱数</button>
-                        </div>
-                        <div className="ranger-picker">
-                            <span className="ranger-picker__text">期間</span>
-                            <RangePicker
-                                defaultValue={[
-                                    moment("2015/01/01", momentFormat),
-                                    moment("2015/01/01", momentFormat),
-                                ]}
-                                format={momentFormat}
-                                size="large"
-                            />
-                        </div>
-                    </div>
-                    <div id="analystics-attachment">
+                    <Header />
+                    <div id="chart-visitor">
                         <div className="data-section">
                             <div className="table">
-                                <div className="line-chart__title">
-                                    <span className="data-section__title">
+                                <div className="line-chart__title-wrapper">
+                                    <span className="title">
                                         シナリオ:
                                     </span>
-                                    <div className="data-section__select">
-                                        <span className="data-section__title">
-                                            シナリオ:
-                                        </span>
-                                        <span className="data-section__title">
-                                            航空券予約
-                                        </span>
+                                    <div className="selector">
+                                        <div className="selector--icon">
+                                            <img src={AdminAnalysticsAssets.ROCKET_ICON} alt="" />
+                                        </div>
+                                        <Dropdown.Button icon={<CaretDownOutlined />} overlay={menu}> 時間を選択</Dropdown.Button>
                                     </div>
 
                                 </div>

@@ -1,16 +1,13 @@
-import "./styles.scss";
-import AdminLayout from "..";
-import { AdminSidebarAssets } from "../../../constants/assets";
 import { EditOutlined, SaveOutlined } from '@ant-design/icons';
 import {
-    Button, Input, Tooltip, Row,
-    Col,
-    DatePicker,
-    Space
+    Button, Col,
+    DatePicker, Input, Row, Tooltip
 } from 'antd';
 import moment from 'moment';
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import AdminLayout from "..";
+import { AdminSidebarAssets } from "../../../constants/assets";
+import "./styles.scss";
 
 function UpdateProfile(props) {
     function onChange(date, dateString) {

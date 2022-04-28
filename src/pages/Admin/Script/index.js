@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import "./styles.scss";
+import React from 'react';
 import AdminLayout from '..';
-import ScriptDataTable from './ScriptDataTable';
 import ScriptDataEmpty from './ScriptDataEmpty';
+import "./styles.scss";
 
 
 function Script(props) {

@@ -1,9 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import "./styles.scss"
-import { AdminSidebar } from '../../../constants/AdminSidebar.js';
-import { AdminSidebarAssets } from "../../../constants/assets.js"
 import { NavLink } from "react-router-dom";
+import { AdminSidebar } from '../../../constants/AdminSidebar.js';
+import { AdminSidebarAssets } from "../../../constants/assets.js";
+import "./styles.scss";
 
 function Sidebar(props) {
     return (
@@ -17,9 +15,9 @@ function Sidebar(props) {
                     {AdminSidebar.map(item => {
                         return <li>
                             <NavLink
-                                className="sidebar__list-group-item"
+                                className={(navData) => (navData.isActive ? 'sidebar__list-group-item sidebar--active' : 'sidebar__list-group-item')}
                                 to={item.to}
-                                activeClassName="sidebar__active"
+
                             >
                                 <span className='sidebar__list-group-icon'>
                                     <img src={item.smallIcon} alt="" />

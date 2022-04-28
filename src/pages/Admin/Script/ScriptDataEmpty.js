@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import "./styles.scss";
-import { Button } from "antd";
 import { PlusCircleOutlined } from "@ant-design/icons";
-import { AdminAdsAssets } from "../../../constants/assets.js"
+import { Button } from "antd";
+import React, { useState } from 'react';
+import { AdminAdsAssets } from "../../../constants/assets.js";
 import CreateScript from './CreateScript';
+import "./styles.scss";
 
 function ScriptDataEmpty(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);

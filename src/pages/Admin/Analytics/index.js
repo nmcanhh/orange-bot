@@ -1,26 +1,13 @@
+import { Pie } from '@ant-design/plots';
+import { DatePicker, Table, Tabs } from "antd";
+import "antd/dist/antd.css";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "..";
-import "./styles.scss";
-import {
-    Modal,
-    Tabs,
-    Input,
-    Select,
-    Table,
-    Button,
-    Popconfirm,
-    Form,
-} from "antd";
-import { DatePicker, Space } from "antd";
-import moment from "moment";
-import "antd/dist/antd.css";
 import { AdminAnalysticsAssets } from "../../../constants/assets";
-import { Pie } from '@ant-design/plots';
-import { AdminDashboardAssets } from "../../../constants/assets.js"
-import { uploadData } from "../../../constants/upload-data.js"
-import { DeleteOutlined } from "@ant-design/icons"
-import dateFormat from "dateformat";
-import { listScript } from "../../../constants/list-script.js"
+import { AdminDashboardAssets } from "../../../constants/assets.js";
+import { listScript } from "../../../constants/list-script.js";
+import Header from "./Header";
+import "./styles.scss";
 
 const data = [
     {
@@ -171,28 +158,8 @@ function Analytics(props) {
         <AdminLayout>
             <div id="analystics">
                 <div className="analystics-wrapper">
-                    <div className="analystics-header">
-                        <div className="tab-pane">
-                            <button className="tab-pane__btn">添付ファイル</button>
-                            <button className="tab-pane__btn tab-pane__btn--active">シナリオ</button>
-                            <button className="tab-pane__btn">
-                                アクセス数
-                            </button>
-                            <button className="tab-pane__btn">開始数・離脱数</button>
-                        </div>
-                        <div className="ranger-picker">
-                            <span className="ranger-picker__text">期間</span>
-                            <RangePicker
-                                defaultValue={[
-                                    moment("2015/01/01", momentFormat),
-                                    moment("2015/01/01", momentFormat),
-                                ]}
-                                format={momentFormat}
-                                size="large"
-                            />
-                        </div>
-                    </div>
-                    <div id="script-chart">
+                    <Header />
+                    <div id="chart-script">
                         <div className="data-section">
                             <div className="data-section--left">
                                 <span className="data-section__title">
@@ -296,7 +263,7 @@ function Analytics(props) {
                                                 text: "Select Even Rows",
                                                 onSelect: (allKeys) => {
                                                     const selectedKeys = allKeys.filter((key) => {
-                                                        return key % 2 == 0;
+                                                        return key % 2 === 0;
                                                     });
                                                     setAlreadySelectedRows(selectedKeys);
                                                 },
@@ -309,7 +276,7 @@ function Analytics(props) {
                                                         const isExcellent = dataSource.find(
                                                             (student) => {
                                                                 return (
-                                                                    student.key == key &&
+                                                                    student.key === key &&
                                                                     student.grade.includes("A")
                                                                 );
                                                             }

@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Table, Tag, Button } from "antd";
-import { DeleteOutlined } from "@ant-design/icons"
-import moment from "moment";
+import { DeleteOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import { Button, Table, Tag } from "antd";
 import dateFormat from "dateformat";
-import { listScript } from "../../../constants/list-script.js"
-import { AdminScriptAssets } from "../../../constants/assets.js"
-import { PlusCircleOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from 'react';
+import { AdminScriptAssets } from "../../../constants/assets.js";
+import { listScript } from "../../../constants/list-script.js";
 
 
 
@@ -132,7 +130,7 @@ function ScriptDataTable(props) {
                                 text: "Select Even Rows",
                                 onSelect: (allKeys) => {
                                     const selectedKeys = allKeys.filter((key) => {
-                                        return key % 2 == 0;
+                                        return key % 2 === 0;
                                     });
                                     setAlreadySelectedRows(selectedKeys);
                                 },
@@ -145,7 +143,7 @@ function ScriptDataTable(props) {
                                         const isExcellent = dataSource.find(
                                             (student) => {
                                                 return (
-                                                    student.key == key &&
+                                                    student.key === key &&
                                                     student.grade.includes("A")
                                                 );
                                             }

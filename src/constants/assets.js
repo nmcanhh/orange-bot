@@ -40,6 +40,7 @@ import ChartIcon_2 from "../assets/Admin/Analystics/icon-2.png";
 import ChartIcon_3 from "../assets/Admin/Analystics/icon-3.png";
 import ChartIcon_4 from "../assets/Admin/Analystics/icon-4.png";
 import ChartIcon_5 from "../assets/Admin/Analystics/icon-5.png";
+import RocketIcon from "../assets/Admin/Analystics/rocket-icon.png";
 
 export const AdminSidebarAssets = {
     DEFAULT_AVATAR: DefaultAvatar,
@@ -99,4 +100,6 @@ export const AdminAnalysticsAssets = {
     ICON_3: ChartIcon_3,
     ICON_4: ChartIcon_4,
     ICON_5: ChartIcon_5,
+
+    ROCKET_ICON: RocketIcon,
 }

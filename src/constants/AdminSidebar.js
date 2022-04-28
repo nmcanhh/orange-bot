@@ -20,7 +20,7 @@ export const AdminSidebar = [
         to: '/theme',
     },
     {
-        title: 'Quảng cáo',
+        title: '投稿の設定',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_ADS,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_DASHBOARD,
         to: '/ads',
@@ -32,9 +32,9 @@ export const AdminSidebar = [
         to: '/script',
     },
     {
-        title: 'Thống kê',
+        title: '集計',
         smallIcon: AdminSidebarAssets.SMALL_SIDEBAR_CHART,
         bigIcon: AdminSidebarAssets.BIG_SIDEBAR_DASHBOARD,
-        to: '/analytics',
+        to: '/analystics/chart-script',
     },
 ]

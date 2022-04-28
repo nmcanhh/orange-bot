@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
-import "./styles.scss"
-import AdminLayout from "../../Admin";
-import { Row, Col } from 'antd';
-import { AdminDashboardAssets } from "../../../constants/assets.js"
+import { DeleteOutlined } from "@ant-design/icons";
 import {
     Table
 } from "antd";
 import "antd/dist/antd.css";
-import { uploadData } from "../../../constants/upload-data.js"
-import { DeleteOutlined } from "@ant-design/icons"
-import moment from "moment";
 import dateFormat from "dateformat";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
+import { AdminDashboardAssets } from "../../../constants/assets.js";
+import { uploadData } from "../../../constants/upload-data.js";
+import AdminLayout from "../../Admin";
+import "./styles.scss";
 
 
 function Dashboard(props) {
@@ -193,7 +192,7 @@ function Dashboard(props) {
                                         text: "Select Even Rows",
                                         onSelect: (allKeys) => {
                                             const selectedKeys = allKeys.filter((key) => {
-                                                return key % 2 == 0;
+                                                return key % 2 === 0;
                                             });
                                             setAlreadySelectedRows(selectedKeys);
                                         },
@@ -206,7 +205,7 @@ function Dashboard(props) {
                                                 const isExcellent = dataSource.find(
                                                     (student) => {
                                                         return (
-                                                            student.key == key &&
+                                                            student.key === key &&
                                                             student.grade.includes("A")
                                                         );
                                                     }

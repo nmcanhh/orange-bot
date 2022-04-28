@@ -1,8 +1,6 @@
-import {
-    Modal, Tabs, Input, Select, Table, Button, Popconfirm, Form
-} from "antd";
-import React, { useContext, useState, useEffect, useRef } from 'react';
-import { AdminScriptAssets } from "../../../constants/assets.js"
+import { Form, Input, Modal, Select } from "antd";
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { AdminScriptAssets } from "../../../constants/assets.js";
 
 const EditableContext = React.createContext(null);
 
